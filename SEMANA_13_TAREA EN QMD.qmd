@@ -1,0 +1,105 @@
+---
+title: "SEMANA_13"
+author: "Allison Kristin Campos"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+# IMPORTAR DATA A TRABAJAR
+data<- read_csv("C:/Users/ALLISON/OneDrive/Desktop/sistematizacion/s13_hemodialisis.csv")
+
+```
+
+#VER LAS PRIMERS 6 LINEAS
+
+```{r}
+head(data)
+```
+
+#ESTRUCTURA DE LA DATA
+
+```{r}
+str(data)
+```
+
+#MEDIDAS DE TENDENCIA CENTRAL
+
+#media aritmetica
+
+```{r}
+mean(data$Edad
+```
+
+#MEDIANA
+
+```{r}
+median(data$Edad)
+mode_Edad<-names(sort(table(data$Edad),decreasing = TRUE))
+
+```
+
+#medidas de dispersion
+
+```{r}
+var(data$Edad, na.rm = TRUE)
+```
+
+#desviacion standar
+
+```{r}
+
+sd(data$Edad, na.rm = TRUE)
+```
+
+#rango
+
+```{r}
+range(data$Edad, na.rm = TRUE)
+```
+
+#RANGO INTERCUTILICO
+
+```{r}
+IQR(data$Edad, na.rm = TRUE )
+
+```
+
+#medidas de posicion
+
+#CUARTIL
+
+```{r}
+quantile(data$Edad,probs = c(0.25,0.5,0.75,0.90), na.rm = TRUE)
+summary(data$Edad)
+```
+
+#con todas las variables
+
+```{r}
+summary(data)
+
+```
+
+#tabla
+
+```{r}
+table(data$Sexo)
+prop.table(table(data$Sexo))
+table(data$Enfermedad_Renal)
+```
+
+#visualizacion grafica_histograma
+
+```{r}
+ggplot(data,aes(x=IMC)) +geom_histogram(bins=30)+theme_minimal()
+
+```
